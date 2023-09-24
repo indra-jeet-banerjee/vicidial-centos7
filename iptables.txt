@@ -76,6 +76,27 @@ sudo iptables -I INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 sudo iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT
 sudo iptables -A INPUT -m conntrack --ctstate INVALID -j DROP
 iptables -A INPUT -j DROP       
-
+60  cd /usr/lib64
+   61  cd asterisk
+   62  mkdir asterisk
+   63  mkdir modules
+   64  cd astreisk
+   65  cd asterisk
+   66  mkdir modules
+   67  wget http://asterisk.hosting.lv/bin/codec_g729-ast130-gcc4-glibc-x86_64-pentium4.so
+   68  mv codec_g729-ast130-gcc4-glibc-x86_64-pentium4.so codec_g729.so
+   69  chmod +x codec_g729.so
+   70  astreisk -rvvvv
+   71  asterisk -rvv
+   72  cd ..
+   73  cd lib/asterisk
+   74  cd modules
+   75  ls
+   76  wget http://asterisk.hosting.lv/bin/codec_g729-ast130-gcc4-glibc-x86_64-pentium4.so
+   77  mv codec_g729-ast130-gcc4-glibc-x86_64-pentium4.so codec_g729.so
+   78  chmod +x codec_g729.so
+   79  asterisk -rvv
+   module load codec_g729.so
+   module reload
 
 
