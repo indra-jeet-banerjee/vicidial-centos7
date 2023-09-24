@@ -1,0 +1,81 @@
+##Checking Iptables
+iptables -L -v
+
+iptables -I INPUT -s 49.36.183.59 -j ACCEPT
+
+iptables -I OUTPUT -d 49.36.183.59 -j ACCEPT
+
+iptables -I OUTPUT -d 36.255.66.53 -j ACCEPT
+
+iptables -I INPUT -s 36.255.66.53 -j ACCEPT
+
+iptables -I INPUT -s 103.147.173.214 -j ACCEPT
+
+iptables -I OUTPUT -d 103.147.173.214 -j ACCEPT
+
+
+iptables -I INPUT -s 159.253.57.100 -j ACCEPT
+
+iptables -I OUTPUT -d 159.253.57.100 -j ACCEPT
+
+
+iptables -I INPUT -s 38.147.130.80 -j ACCEPT
+
+iptables -I OUTPUT -d 38.147.130.80 -j ACCEPT
+
+
+iptables -I INPUT -s 125.63.72.211 -j ACCEPT
+
+iptables -I OUTPUT -d 125.63.72.211 -j ACCEPT
+
+iptables -I INPUT -s 125.63.72.210 -j ACCEPT
+
+iptables -I OUTPUT -d 125.63.72.210 -j ACCEPT
+
+
+
+
+sudo iptables -I INPUT -i lo -j ACCEPT
+
+sudo iptables -I OUTPUT -o lo -j ACCEPT
+
+sudo iptables -I INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+
+sudo iptables -I OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT
+
+sudo iptables -I INPUT -m conntrack --ctstate INVALID -j DROP
+
+iptables -I INPUT -j DROP       
+
+
+
+sudo systemctl enable iptables
+ 
+sudo yum install iptables-services
+sudo systemctl status iptables
+sudo service iptables save
+
+
+iptables -I INPUT -s 49.36.183.59 -j ACCEPT
+iptables -I OUTPUT -d 49.36.183.59 -j ACCEPT
+iptables -I OUTPUT -d 36.255.66.53 -j ACCEPT
+iptables -I INPUT -s 36.255.66.53 -j ACCEPT
+iptables -I INPUT -s 103.147.173.214 -j ACCEPT
+iptables -I OUTPUT -d 103.147.173.214 -j ACCEPT
+iptables -I INPUT -s 159.253.57.100 -j ACCEPT
+iptables -I OUTPUT -d 159.253.57.100 -j ACCEPT
+iptables -I INPUT -s 38.147.130.80 -j ACCEPT
+iptables -I OUTPUT -d 38.147.130.80 -j ACCEPT
+iptables -I INPUT -s 125.63.72.211 -j ACCEPT
+iptables -I OUTPUT -d 125.63.72.211 -j ACCEPT
+iptables -I INPUT -s 125.63.72.210 -j ACCEPT
+iptables -I OUTPUT -d 125.63.72.210 -j ACCEPT
+sudo iptables -I INPUT -i lo -j ACCEPT
+sudo iptables -I OUTPUT -o lo -j ACCEPT
+sudo iptables -I INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT
+sudo iptables -A INPUT -m conntrack --ctstate INVALID -j DROP
+iptables -A INPUT -j DROP       
+
+
+
