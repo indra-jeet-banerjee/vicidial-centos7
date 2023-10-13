@@ -70,6 +70,21 @@ iptables -I INPUT -s 125.63.72.211 -j ACCEPT
 iptables -I OUTPUT -d 125.63.72.211 -j ACCEPT
 iptables -I INPUT -s 125.63.72.210 -j ACCEPT
 iptables -I OUTPUT -d 125.63.72.210 -j ACCEPT
+
+iptables -I INPUT -s 135.181.215.50 -j ACCEPT
+iptables -I OUTPUT -d 135.181.215.50 -j ACCEPT
+
+
+iptables -I INPUT -s 18.215.199.86 -j ACCEPT
+iptables -I OUTPUT -d 18.215.199.86 -j ACCEPT
+
+iptables -I INPUT -s 18.210.7.0 -j ACCEPT
+iptables -I OUTPUT -d 18.210.7.0 -j ACCEPT
+
+iptables -I INPUT -s 3.232.240.36 -j ACCEPT
+iptables -I OUTPUT -d 3.232.240.36 -j ACCEPT
+
+
 sudo iptables -I INPUT -i lo -j ACCEPT
 sudo iptables -I OUTPUT -o lo -j ACCEPT
 sudo iptables -I INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
