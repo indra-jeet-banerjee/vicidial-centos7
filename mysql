@@ -1,0 +1,3 @@
+ update user set Create_priv='Y';
+ FLUSH PRIVILEGES;
+user cron need create permission
