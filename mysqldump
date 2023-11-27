@@ -1,0 +1,15 @@
+first use mysqldump to capture your present db (just in case).
+CODE: SELECT ALL
+mysqldump asterisk > 2012_08_06_XXXXXXXXXXX.sql
+If using a password, you'll need to add "-p" and enter the pass at the prompt.
+
+then drop the existing database and recreate it
+CODE: SELECT ALL
+mysql -e "drop database asterisk"
+mysql -e "create database asterisk"
+
+then apply the mysql backup to it.
+CODE: SELECT ALL
+mysql asterisk < Prior_backup_name.sql
+
+It may be a good idea to reboot. It's definitely a good idea to tell the server to rebuild the conf files under Admin->Servers->(select your server)
