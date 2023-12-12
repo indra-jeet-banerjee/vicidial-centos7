@@ -1,0 +1,7 @@
+sudo yum install epel-release
+sudo yum install httpd mod_ssl python-certbot-apache
+clear
+  363  sudo certbot --apache -d ipg.protalkdialler.com
+  364  sudo systemctl status iptables
+  365  sudo systemctl stop iptables
+  366  sudo systemctl restart iptables
